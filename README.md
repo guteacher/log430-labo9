@@ -21,7 +21,7 @@ git clone https://github.com/[votrenom]/log430-labo9
 cd log430-labo9
 ```
 
-> ⚠️ ATTENTION : Contrairement aux laboratoires précédents, vous devez créer toute la structure du projet vous-même. Assurez-vous de bien lire chaque étape dans la section Activités pratiques pour faire le setup correctement et également l'implémentation. Utilisez les labos précédents comme réference si vous avez besoin.
+> ⚠️ Arc42
 
 ## 🧪 Activités pratiques
 
