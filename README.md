@@ -169,7 +169,7 @@ def setup_database():
     cluster.shutdown()
 ```
 
-### 9. Ajoutez un endpoint pour créer un produit
+### 9. Ajoutez un endpoint pour créer un article
 
 Créez un endpoint REST pour ajouter des articles à la base de données. 
 
