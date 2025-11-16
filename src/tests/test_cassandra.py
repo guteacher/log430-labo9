@@ -1,3 +1,9 @@
+
+"""
+Smoke tests: Flask + Apache Cassandra
+SPDX-License-Identifier: LGPL-3.0-or-later
+Auteurs: Gabriel C. Ullmann, Fabio Petrillo, 2025
+"""
 import pytest
 import requests
 import time
@@ -9,6 +15,7 @@ class TestProductAPISmoke:
     
     @pytest.fixture(scope="class")
     def api_health_check(self):
+        """Test for API health in the start"""
         try:
             requests.get(f"{self.BASE_URL}/products", timeout=5)
             return True
@@ -18,10 +25,12 @@ class TestProductAPISmoke:
             pytest.fail(f"Error connecting to API: {str(e)}")
     
     def test_01_api_is_running(self):
+        """Check if products endpoint is up and running"""
         response = requests.get(f"{self.BASE_URL}/products")
         assert response.status_code in [200, 404]
     
     def test_02_create_product(self):
+        """Check creation of a new product"""
         test_product = {
             "name": "Cheap Laptop",
             "sku": f"LAPTOP-{int(time.time())}",
@@ -37,6 +46,7 @@ class TestProductAPISmoke:
         assert response.status_code in [200, 201]
     
     def test_03_get_products(self):
+        """Check retrieval of products"""
         response = requests.get(f"{self.BASE_URL}/products")
         assert response.status_code == 200
         
@@ -44,6 +54,7 @@ class TestProductAPISmoke:
         assert isinstance(data, (list, dict))
     
     def test_04_create_and_retrieve(self):
+        """Check creation and subsequent retrieval"""
         unique_sku = f"SMOKE-{int(time.time())}"
         test_product = {
             "name": "Gamer Mouse",
@@ -80,6 +91,7 @@ class TestProductAPISmoke:
         assert found, f"Product with SKU {unique_sku} not found"
     
     def test_05_invalid_data(self):
+        """Check insertion of product with missing attributes"""
         invalid_product = {"name": "Incomplete Product"}
         
         response = requests.post(
