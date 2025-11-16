@@ -60,7 +60,7 @@ Le système permet la gestion de produits dans un environnement distribué :
 | Problème | Approche de solution |
 |----------|---------------------|
 | **Distribution des données** | Cassandra distribue automatiquement les données à travers le cluster selon une stratégie de partitionnement par hachage |
-| **Haute disponibilité** | Architecture masterless avec réplication configurable (replication_factor) |
+| **Haute disponibilité** | Architecture sans point de défaillance unique avec réplication configurable (replication_factor) |
 | **Cohérence des données** | Synchronisation automatique entre nœuds gérée par Cassandra |
 | **Scalabilité** | Ajout de nœuds sans interruption de service grâce à l'architecture peer-to-peer |
 | **Résilience** | Données répliquées sur plusieurs nœuds permettant la continuité même en cas de panne |
@@ -82,7 +82,6 @@ Le système permet la gestion de produits dans un environnement distribué :
 - **Partitionnement** : Distribution automatique des données par hachage de la clé primaire
 - **Réplication** : Copie des données sur plusieurs nœuds selon le facteur de réplication
 - **Cohérence éventuelle** : Les données convergent vers un état cohérent à travers le cluster
-- **Architecture masterless** : Tous les nœuds sont égaux, pas de point de défaillance unique
 
 ## 9. Décisions d'architecture
 Veuillez consulter le fichier `/docs/adr/adr001.md` pour la décision d'utiliser Apache Cassandra.
@@ -90,7 +89,7 @@ Veuillez consulter le fichier `/docs/adr/adr001.md` pour la décision d'utiliser
 ## 10. Exigences qualité
 
 ### Haute disponibilité
-- Architecture masterless : aucun point de défaillance unique
+- Aucun point de défaillance unique
 - Réplication configurable (RF=1 à 3)
 - Lectures/écritures possibles même avec nœuds défaillants
 
