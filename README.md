@@ -174,7 +174,7 @@ def setup_database():
 Créez un endpoint REST pour ajouter des articles à la base de données. 
 
 - Pour l'implémentation : utilisez l'exemple suivant, générez un uuid en utilisant des fonctions natives Python et écrivez le INSERT en utilisant un [prepared statement](https://docs.datastax.com/en/developer/python-driver/3.29/getting_started/index.html#prepared-statement)
-- Pour organiser votre code : Utilisez les patrons MVC et repository.
+- Pour organiser votre code : Utilisez les patrons MVC et DAO.
 
 Par exemple, dans `src/api.py`:
 ```python

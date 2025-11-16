@@ -20,7 +20,7 @@ L'application démontre :
 | 2 | **Scalabilité horizontale** | Ajout de nouveaux nœuds Cassandra sans interruption de service |
 | 3 | **Résilience** | Les données sont répliquées automatiquement selon le facteur de réplication configuré |
 | 4 | **Distribution native** | Élimination de la synchronisation manuelle entre bases de données |
-| 5 | **Maintenabilité** | Séparation claire des responsabilités via les patrons MVC et Repository |
+| 5 | **Maintenabilité** | Séparation claire des responsabilités via les patrons MVC et DAO |
 
 ### Parties prenantes (Stakeholders)
 - **Développeur·euses** : Apprendre l'architecture de bases de données distribuées et les principes de Cassandra
