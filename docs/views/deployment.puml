@@ -1,0 +1,12 @@
+@startuml
+  node ConteneurMagasin {
+    component "store_manager.py" 
+    database "cassandra-1"
+  }
+
+  node Conteneur2 {
+    database "cassandra-2"
+  }
+  "store_manager.py" <--> "cassandra-1" : CassandraProtocol
+  "store_manager.py" <--> "cassandra-2" : CassandraProtocol
+@enduml

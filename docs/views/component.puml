@@ -1,0 +1,25 @@
+@startuml
+package View {
+    [api.py] 
+}
+
+package Controller {
+    [ProductController] 
+}
+
+package DAO {
+    [ProductDAO] 
+}
+
+
+package Model {
+    [Product] 
+}
+
+[api.py] --> [ProductController] : Demander la création d'un article
+[ProductController] --> [ProductDAO] : Créer une commande
+[ProductDAO] --> [ProductController] : Notifier le Controller
+[ProductController] --> [api.py] : Mettre à jour la View 
+[ProductDAO] --> [Product] : Créer un article
+[Product] --> [ProductDAO] : Notifier le model
+@enduml

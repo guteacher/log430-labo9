@@ -1,0 +1,29 @@
+@startuml
+    class Product {
+        + id: int
+        + name: string
+        + brand: string
+        + price: float
+    }
+
+    class ProductDAO {
+        + select_all(): Product[]
+        + insert(Product): int
+        + close(): void
+    }
+
+    class ProductController {
+        + list_products():Product[]
+        + create_product(): void
+    }
+
+    class api {
+        
+    }
+
+    ProductDAO --> Product
+    ProductController --> ProductDAO
+    api --> ProductController
+    ProductController --> Product
+    
+@enduml
