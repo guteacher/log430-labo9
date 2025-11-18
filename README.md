@@ -215,7 +215,7 @@ Dans `src/daos/product_dao.py`:
 
 Implémentez la logique pour insérer un article dans Cassandra. Ensuite, exécutez les tests unitaires, au moins le test d'écriture devrait passer.
 
-> 📝 NOTE : Cassandra utilise l'algorithime [Paxos](https://docs.datastax.com/en/dse/6.9/architecture/database-internals/lightweight-transactions.html) pour gérer les transactions distribués. Par exemple, si deux nœuds distincts de Cassandra reçoivent simultanément une demande à soustraire 100 unités d'un produit du stock, un seul peut le faire. C'est grâce à l'algorithme Paxos que les nœuds parviennent à un consensus sur celui qui doit effectuer l'opération. Sans Paxos, dans une telle situation, 200 unités seraient déduites du stock.
+> 📝 REMARQUE : Cassandra utilise l'algorithme [Paxos](https://docs.datastax.com/en/dse/6.9/architecture/database-internals/lightweight-transactions.html) pour gérer les transactions distribuées. Par exemple, si deux nœuds Cassandra distincts reçoivent simultanément une demande de soustraire 100 unités d'un produit de l'inventaire, un seul peut le faire. C'est grâce à l'algorithme Paxos que les nœuds parviennent à un consensus sur celui qui doit effectuer l'opération. Sans Paxos, dans une telle situation, 200 unités seraient déduites de l'inventaire.
 
 ### 10. Ajoutez un endpoint pour lire les articles
 
