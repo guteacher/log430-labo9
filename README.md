@@ -52,7 +52,7 @@ CMD ["python", "api.py"]
 Créez un fichier `docker-compose.yml` avec 2 services : `store_manager` et `cassandra`. Pour Cassandra, utilisez la version 4.1 de l'image officielle disponible sur [Docker Hub](https://hub.docker.com/_/cassandra). Pour `store_manager`, utilisez le même port que nous avons utilisé pendant les labos précédents (5000).
 
 ```yaml
-services:container_name: cassandra
+services:
   cassandra:
     image: cassandra:4.1
     container_name: cassandra
