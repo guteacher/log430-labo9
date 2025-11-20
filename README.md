@@ -32,7 +32,8 @@ Vous aurez besoin des dépendances suivantes pour ce projet :
 - `cassandra-driver>=3.29` : pour la connexion à Cassandra
 - `python-dotenv>=1.0` : pour la gestion des variables d'environnement
 - `Flask>=2.0` : pour les endpoints API
-- `pytest>=7.0`
+- `requests>=2.0` : pour les requêtes HTTP
+- `pytest>=7.0` : pour les tests unitaires
 
 ### 2. Créez votre Dockerfile
 Créez un `Dockerfile` qui utilise l'image `python:3.11-slim`, comme nous l'avons utilisée lors des derniers labos.
